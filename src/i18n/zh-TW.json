@@ -1,0 +1,18 @@
+{
+  "Brand": {
+    "name": "Parking Go 快找車"
+  },
+  "Nav": {
+    "home": "首頁"
+  },
+  "Welcome": {
+    "welcome": "歡迎"
+  },
+  "General": {
+    "and": "和",
+    "close": "關閉",
+    "upload": "上傳",
+    "clear": "清除",
+    "picture": "照片"
+  }
+}
