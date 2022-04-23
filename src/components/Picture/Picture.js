@@ -1,6 +1,9 @@
 import { Figure } from "react-bootstrap"
 import Viewer from 'react-viewer' //https://github.com/infeng/react-viewer
 import { useState } from "react"
+import viewer from 'react-mobile-image-viewer'; //https://github.com/skyFi/react-mobile-image-viewer
+import 'react-mobile-image-viewer/lib/index.css';
+import {isMobile} from 'react-device-detect';
 
 function Picture(params) {
   let img = params.img
@@ -13,7 +16,16 @@ function Picture(params) {
         style={{width: "100%", height: "auto"}}
         alt={imgCaption}
         src={img}
-        onClick={() => setVisible(true)}
+        onClick={() => {
+          if (isMobile) {
+            viewer({
+              urls: [img],
+              zIndex: 9999
+            });
+          } else {
+            setVisible(true);
+          }
+        }}
       />
       : <lottie-player src="https://assets9.lottiefiles.com/datafiles/9jPPC5ogUyD6oQq/data.json"  background="transparent"  speed="1"  style={{maxWidth: "400px",height: "auto"}}  loop autoplay></lottie-player>}
       <Figure.Caption className="user-select-all">{imgCaption}</Figure.Caption>

@@ -5,7 +5,7 @@ function ClearParkingPicture(params) {
   const { t } = useTranslation()
   return (
     <>
-      <Button className="w-100" variant="outline-success" onClick={params.clear_pictures}>{t("General.clear")+t("General.picture")}</Button>{' '}
+      <Button className="w-100" variant="primary" onClick={params.clear_pictures}>{t("General.clear")+t("General.picture")}</Button>{' '}
     </>
   )
 }

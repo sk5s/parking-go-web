@@ -57,7 +57,7 @@ function ParkingPicture(){
             'Compress image?',
             'Image is too large parking go can\'t save it.',
             () => {
-              compress_image(event.target.files[0],0.9)
+              compress_image(event.target.files[0],0.8)
             },
             () => {
               alertify.error('Cancel')

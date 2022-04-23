@@ -6,9 +6,9 @@ import { Container } from 'react-bootstrap';
 
 function App() {
   return (
-    <div className='min-vh-100'>
+    <div >
       <TopNavbar />
-      <Container>
+      <Container style={{marginTop: "80px"}}>
         <ParkingPicture />
       </Container>
       <Welcome />

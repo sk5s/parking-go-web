@@ -9,7 +9,7 @@ function TopNavbar(){
     window.location.reload()
   }
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="dark" expand="lg" variant="dark" fixed="top">
       <Container>
         <Navbar.Brand href="/">{t("Brand.name")}</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
