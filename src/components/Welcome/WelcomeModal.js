@@ -11,17 +11,18 @@ function WelcomeModal(params) {
 
   return (
     <>
-      <Modal show={show} onHide={handleClose} backdrop="static" size="md" centered>
+      <Modal show={show} onHide={handleClose} backdrop="static" size="lg" centered>
         <Modal.Header closeButton>
           <Modal.Title>{t("Welcome.welcome")}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          Welcome to parking go!
-
+          Welcome to parking go!{" "}
+          <br/>
+          <h3>Features: </h3>
           <WelcomeCarousel />
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
+          <Button variant="primary" onClick={handleClose}>
             {t("General.close")}
           </Button>
           {/* <Button variant="primary" onClick={handleClose}>

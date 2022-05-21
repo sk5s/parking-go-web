@@ -1,13 +1,10 @@
 import { Nav, Container, Navbar } from 'react-bootstrap'
 import { useTranslation } from 'react-i18next'
-import loname from '../../localstorage.json'
+import { reset_welcome_and_reload } from '../Welcome/welcome'
 
 function TopNavbar(){
   const { t } = useTranslation()
-  const reset_welcome_and_reload = () => {
-    localStorage.removeItem(loname.not_first_time)
-    window.location.reload()
-  }
+  
   return (
     <Navbar bg="dark" expand="lg" variant="dark" fixed="top">
       <Container>

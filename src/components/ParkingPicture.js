@@ -1,9 +1,10 @@
 import Upload from './Form/Upload'
 import Picture from './Picture/Picture'
-import ClearParkingPicture from './Form/ClearParkingPicture'
+import Fab from './Fab/Fab'
 import loname from './../localstorage.json'
 import alertify from 'alertifyjs/build/alertify.min.js'
 import ReactLoading from 'react-loading';
+import { reset_welcome_and_reload } from './Welcome/welcome'
 
 import { useState } from 'react'
 import Compressor from 'compressorjs'
@@ -39,6 +40,7 @@ function ParkingPicture(){
   const [img, renewImg] = useState(stored_image.img)
   const [imgCaption, updateCaption] = useState(stored_image.caption)
   const [loading, changeLoadingTo] = useState(false)
+  console.log(img)
 
   const read_and_display_image = (event) => {
     const reader = new FileReader()
@@ -112,13 +114,14 @@ function ParkingPicture(){
   }
   return (
     <>
-      {img ? <></> : <Upload update={read_and_display_image} />}
+      {img ? "" : <Upload update={read_and_display_image} />}
       <div className='mt-5 mb-5' style={{width:"100%", textAlign: "center"}}>
-        {img ? (<ClearParkingPicture clear_pictures={clear_pictures} />) : (<></>)}
+        {/* {img ? <ClearParkingPicture clear_pictures={clear_pictures} /> : ""} */}
         {loading
         ? <div className='mt-5 mb-5 d-flex justify-content-center'><ReactLoading type="balls" color="#000" width={100} height={100} /></div>
         : <Picture img={img} imgCaption={imgCaption} />}
       </div>
+      <Fab showRemove={img !== undefined && img !== ""} remove={clear_pictures} welcome={reset_welcome_and_reload} />
     </>
   )
 }
